@@ -1,1 +1,41 @@
-<p>hello everyone this is about page</p>
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0117)https://blackboard.uwindsor.ca/bbcswebdav/pid-1018693-dt-content-rid-9404581_1/courses/COMP8347-1-CS-2019S/index.html -->
+<html lang="en">
+<div id="bm-2225254214">
+    <div data-reactroot="" id="bm-2225254214"></div>
+</div>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+         #para1 {
+            color: red;
+             text-align:center;
+    }
+    </style>
+</head>
+ <link rel="stylesheet" type="text/css" href="{% static "MainStyle.css" %}"/>
+<body>
+    <div id=imgdiv>
+        <img src="{% static "logo.png" %}" width="200" />
+    </div>
+    	<h1>Welcome to LifeSport Store!!</h1>
+    	<h2>This is the about page</h2>
+
+
+        <div>
+
+         <nav id="navbar">
+             <a href = "/">Home</a> | <a href="/about"> About</a> | <a href="/myaccount">My Account</a> | <a href="/purchase">Purchase Online</a>
+         </nav>
+
+        <h3>
+		<p id="para1"> Group Project Submitted by Group 5<br>
+            Bhuvan Vij - 104909272<br>
+            Shobhit Saxena - 105028118<br>
+            Jalaj Khanna - 105028332</p>
+        </h3>
+        </div>
+
+</html>
