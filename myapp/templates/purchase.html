@@ -1,1 +1,57 @@
-<p>hello this is purchase page</p>
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0117)https://blackboard.uwindsor.ca/bbcswebdav/pid-1018693-dt-content-rid-9404581_1/courses/COMP8347-1-CS-2019S/index.html -->
+<html lang="en">
+<div id="bm-2225254214">
+    <div data-reactroot="" id="bm-2225254214"></div>
+</div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <link rel="stylesheet" type="text/css" href="{% static "MainStyle.css" %}"/>
+
+</head>
+<body>
+<h1>Welcome to LifeSport Store!!</h1>
+<h2>This is the home page</h2>
+<h3 class="myh3">Purchase Order Here
+</h3>
+<div class="content">
+    <div class="form">
+        <form onsubmit="window.location ='/successorder'; return false">
+            <div class="input-group">
+                <label>First Name : </label>
+                <input type="text" name="firstname" required><br>
+            </div>
+            <div class="input-group">
+                <label>Email : </label>
+                <input type="text" name="email" required><br>
+            </div>
+            <div class="input-group">
+                <label>Method of Payment</label><br>
+                <div id="radio-option">
+                    <label for="opt1">Debit Card</label>
+                    <input type="radio" id="opt1" name=“pmethod" value="debit" label="hello" checked>
+                </div>
+                <div id="radio-option">
+                <label for="opt2">Credit Card</label>
+                <input id="opt2" type="radio" name=“pmethod" value="credit">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Item To Purchase</label>
+                <input type="text" name="item" required><br/>
+            </div>
+            <div class="input-group">
+                <label>Address</label>
+                <textarea rows="5" name="address"></textarea>
+            </div>
+            <div class="input-group">
+                <small><input type="checkbox" name="promo" value="promo" checked="checked" /> I would like to receive email about promos, special events and offers <br/></small>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -10,3 +10,5 @@ def myaccount(request):
     return render(request, 'myaccount.html')
 def purchase(request):
     return render(request, 'purchase.html')
+def successorder(request):
+    return render(request, 'success.html')
