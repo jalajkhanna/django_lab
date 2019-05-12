@@ -16,6 +16,10 @@
 <h2>This is the home page</h2>
 <h3 class="myh3">Purchase Order Here
 </h3>
+<nav id="navbar">
+    <a href="/">Home</a> | <a href="/about"> About</a> | <a href="/myaccount">My Account</a> | <a href="/purchase">Purchase
+    Online</a>
+</nav>
 <div class="content">
     <div class="form">
         <form onsubmit="window.location ='/successorder'; return false">
@@ -34,8 +38,8 @@
                     <input type="radio" id="opt1" name=“pmethod" value="debit" label="hello" checked>
                 </div>
                 <div id="radio-option">
-                <label for="opt2">Credit Card</label>
-                <input id="opt2" type="radio" name=“pmethod" value="credit">
+                    <label for="opt2">Credit Card</label>
+                    <input id="opt2" type="radio" name=“pmethod" value="credit">
                 </div>
             </div>
             <div class="input-group">
@@ -47,7 +51,8 @@
                 <textarea rows="5" name="address"></textarea>
             </div>
             <div class="input-group">
-                <small><input type="checkbox" name="promo" value="promo" checked="checked" /> I would like to receive email about promos, special events and offers <br/></small>
+                <small><input type="checkbox" name="promo" value="promo" checked="checked"/> I would like to receive
+                    email about promos, special events and offers <br/></small>
             </div>
             <input type="submit" value="Submit">
         </form>
