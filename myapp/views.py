@@ -14,5 +14,9 @@ def successorder(request):
     return render(request, 'success.html')
 def clothing(request):
     return render(request, 'clothing.html')
+def equipment(request):
+    return render(request, 'equipment.html')
+def otheritem(request):
+    return render(request, 'otheritem.html')
 def productdetails(request):
     return render(request, 'productdetails.html')

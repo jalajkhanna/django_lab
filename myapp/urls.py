@@ -9,6 +9,8 @@ urlpatterns = [
     path('myaccount', views.myaccount, name='myaccount'),
     path('successorder', views.successorder, name='successorder'),
     path('clothing', views.clothing, name='clothing'),
-path('productdetails', views.productdetails, name='productdetails')
+    path('equipment', views.equipment, name='equipment'),
+    path('otheritem', views.otheritem, name='otheritem'),
+    path('productdetails', views.productdetails, name='productdetails')
 
 ]
