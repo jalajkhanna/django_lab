@@ -1,8 +1,18 @@
-#nav1 {
+#navbar {
             text-align:center;
             border: 2px solid black;
             color:green;
         }
 h1 {
-    color:blue;
+    text-align:center;
+    color:#cc6018;
+}
+h2 {
+    text-align:center;
+    color:#cc6018;
+}
+body {
+    background-image: url("bgimage.jpg");
+    background-color:#e5e3e5;
+
 }
