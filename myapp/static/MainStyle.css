@@ -5,22 +5,9 @@
             background-color:  #f2f2f2;
 
         }
-a:link, a:visited {
-    background-color: #d9d9d9;
-    border: none;
-    color: #FFFFFF;
-    padding: 15px 32px;
-    text-align: center;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+a {
     text-decoration: none;
-   font-size: 16px;
-   cursor: pointer;
-   display: inline-block;
-}
 
-a:hover, a:active {
-   background-color: black;
 }
 h1 {
     text-align:center;
@@ -64,5 +51,14 @@ body {
 
 }
 #imgdiv {
-    text-align:left;
+    text-align: left;
+}
+.products {
+
+    float: right;
+    margin: 10px;
+
+.item-group {
+    display: inline-block;
+    width: 100%;
 }
