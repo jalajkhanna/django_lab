@@ -1,15 +1,21 @@
 #navbar {
             text-align:center;
-            border: 2px solid black;
+            border: 1px solid black;
             color:green;
+            background-color:  #f2f2f2;
+
         }
+a {
+    text-decoration: none;
+
+}
 h1 {
     text-align:center;
-    color:#cc6018;
+    color:black;
 }
 h2 {
     text-align:center;
-    color:#cc6018;
+    color:black;
 }
 input[type=text], input[type=radio], textarea, #radio-option {
   width: 100%;
@@ -44,12 +50,14 @@ body {
     background-color:#e5e3e5;
 
 }
+#imgdiv {
+    text-align: left;
+}
 .products {
 
     float: right;
     margin: 10px;
 }
-
 .item-group {
     display: inline-block;
     width: 100%;
