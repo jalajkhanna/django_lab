@@ -44,6 +44,13 @@ body {
     background-color:#e5e3e5;
 
 }
-img {
-    alignment: right;
+.products {
+
+    float: right;
+    margin: 10px;
+}
+
+.item-group {
+    display: inline-block;
+    width: 100%;
 }

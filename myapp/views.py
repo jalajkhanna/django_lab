@@ -12,3 +12,7 @@ def purchase(request):
     return render(request, 'purchase.html')
 def successorder(request):
     return render(request, 'success.html')
+def clothing(request):
+    return render(request, 'clothing.html')
+def productdetails(request):
+    return render(request, 'productdetails.html')
