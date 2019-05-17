@@ -7,6 +7,8 @@ from django.utils import timezone
 class Category(models.Model):
     name = models.CharField(max_length=200)
     warehouse = models.CharField(max_length=200, blank=False, default='Windsor')
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -16,6 +18,9 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=100)
     available = models.BooleanField(default=True)
     description = models.TextField(blank=True, default='')
+
+    def __str__(self):
+        return self.name
 
 
 class Client(User):
@@ -32,4 +37,8 @@ class Order(models.Model):
     client = models.ForeignKey( Client, related_name='orders', on_delete=models.CASCADE)
     num_units = models.PositiveIntegerField(default=100)
     order_status = models.IntegerField( choices=STATUS_CHOICES,default=1)
-    status_date = models.DateField
+    status_date = models.DateField(default=datetime.date.today)
+
+    def total_cost(self):
+        total = (self.product.price)*(self.num_units)
+        return total
