@@ -31,6 +31,10 @@ class Client(User):
     province=models.CharField(max_length=2, choices=PROVINCE_CHOICES, default='ON')
     interested_in = models.ManyToManyField(Category)
 
+    def __str__(self):
+        result = User.get_full_name(self)
+        return result
+
 class Order(models.Model):
     STATUS_CHOICES = [(0,'Order Cancelled'),(1, 'Order Placed'),(2, 'Order Shipped'),(3, 'Order Delivered')]
     product = models.ForeignKey(Product, related_name='orders',on_delete=models.CASCADE)
@@ -38,6 +42,10 @@ class Order(models.Model):
     num_units = models.PositiveIntegerField(default=100)
     order_status = models.IntegerField( choices=STATUS_CHOICES,default=1)
     status_date = models.DateField(default=datetime.date.today)
+
+    def __str__(self):
+        result = str(self.client)+str(self.product)+'-'+str(self.num_units)+'on'+str(self.status_date)
+        return result
 
     def total_cost(self):
         total = (self.product.price)*(self.num_units)
