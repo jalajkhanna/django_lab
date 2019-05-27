@@ -17,5 +17,5 @@ from myapp import views
 
 app_name = 'myapp'
 urlpatterns = [ path(r'', views.index, name='index'),
-                path(r'about',views.about, name='about'),
+                path(r'about/',views.about, name='about'),
                 path('cat_no/<int:cat_no>/', views.cat_no) ]
