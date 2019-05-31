@@ -1,12 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Online Store APP</title>
+    <title>Title</title>
 </head>
 <body>
 
-{% if warehouse_loc %}
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if warehouse_loc %}
 {#    <h2>Location of the warehouse</h2>#}
     <h2> Location of the warehouse : {{ warehouse_loc }} </h2>
 
@@ -16,13 +19,17 @@
             <li>{{ product }}</li>
             </ul>
         {% endfor %}
-    <a href="{% url 'myapp:index'  %}">Index Page (using URL Namesapcing)</a>
+
+
 
 
 
 {% else %}
     <strong>There are no available categories!</strong>
 {% endif %}
+{% endblock %}
+
+
 
 </body>
 </html>

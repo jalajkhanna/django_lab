@@ -1,0 +1,11 @@
+h1 {
+    background-color: #bbccdd;
+    text-align:center;
+    font-size: 16px;
+    font-style: normal;
+    color:black;
+}
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}

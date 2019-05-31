@@ -43,11 +43,12 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 
 def index(request):
     cat_list = Category.objects.all().order_by('id')[:10]
-    return render(request, 'myapp/index0.html', {'cat_list': cat_list})
+
+    return render(request, 'myapp/index.html', {'cat_list': cat_list})
 
 
 def about(request):
-    return render(request,'myapp/about0.html')
+    return render(request,'myapp/about.html')
 
 
 def cat_no(request, cat_no):
@@ -64,4 +65,4 @@ def cat_no(request, cat_no):
     #     para2 = '<p>' + 'Product ' + str(index+1) + ':' + str(products) + '</p>'
     #     response.write(para2)
     # return response
-     return render(request,'myapp/detail0.html',{'warehouse_loc': warehouse_loc, 'prod_list': prod_list} )
+     return render(request,'myapp/detail.html',{'warehouse_loc': warehouse_loc, 'prod_list': prod_list} )
