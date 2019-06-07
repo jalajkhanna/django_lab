@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.forms import ModelForm
 
 
 class Category(models.Model):
@@ -54,3 +55,9 @@ class Order(models.Model):
     def total_cost(self):
         total = (self.product.price)*(self.num_units)
         return total
+
+
+class OrderForm(ModelForm):
+    class Meta:
+        model = Order
+        fields = ['client','product','num_units']
