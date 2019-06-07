@@ -66,3 +66,7 @@ def cat_no(request, cat_no):
     #     response.write(para2)
     # return response
      return render(request,'myapp/detail.html',{'warehouse_loc': warehouse_loc, 'prod_list': prod_list} )
+
+def products(request):
+    prodlist = Product.objects.all().order_by('id')[:10]
+    return render(request,'myapp/products.html', {'prodlist': prodlist})
