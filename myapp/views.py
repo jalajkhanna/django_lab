@@ -70,3 +70,9 @@ def cat_no(request, cat_no):
 def products(request):
     prodlist = Product.objects.all().order_by('id')[:10]
     return render(request,'myapp/products.html', {'prodlist': prodlist})
+
+def place_order(request):
+    heading = '<p>'+'You can place your oder here.'+'<p>'
+    response = HttpResponse()
+    response.write(heading)
+    return response
