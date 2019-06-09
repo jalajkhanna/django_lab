@@ -3,6 +3,7 @@ import datetime
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.forms import ModelForm
+from django import forms
 
 
 class Category(models.Model):
@@ -61,7 +62,5 @@ class Order(models.Model):
         return total
 
 
-class OrderForm(ModelForm):
-    class Meta:
-        model = Order
-        fields = ['client','product','num_units']
+
+

@@ -95,3 +95,10 @@ def place_order(request):
         form = OrderForm()
     return render(request, 'myapp/placeorder.html', {'form': form, 'msg': msg,
                                                      'prodlist': prodlist})
+def productdetail(request,prod_id):
+    if request.method == 'POST':
+        form = forms.InterestForm(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            var = Product.objects.get(name=item.name)
+    return render(request,'myapp/productdetails.html', {'form': form})
