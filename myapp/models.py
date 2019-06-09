@@ -27,9 +27,9 @@ class Product(models.Model):
     def refill(self):
         return self.stock+100
 
-    # def updateStock(self, n):
-    #    newstock = self.stock - n
-    #    return newstock
+    def updateStock(self,var,newstock,num):
+        Product.objects.filter(name=var).update(stock=newstock-num)
+        return self.stock
 
 
 class Client(User):

@@ -80,9 +80,13 @@ def place_order(request):
         if form.is_valid():
             order = form.save(commit=False)
             if order.num_units <= order.product.stock:
+
+                var = Product.objects.get(name=order.product)
+                newstock = Product.objects.filter(name=var).values_list('stock',flat=True).get()
+                msg = 'Your order has been placed successfully.'+str(var) +str(order.num_units)+str(newstock)
+                p = Product()
+                p.updateStock(var,newstock,order.num_units)
                 order.save()
-                msg = 'Your order has been placed successfully.'
-                order.product.stock -= order.num_units
             else:
                  msg = 'We do not have sufficient stock to fill your order.'
             return render(request, 'myapp/order_response.html', {'msg': msg})
