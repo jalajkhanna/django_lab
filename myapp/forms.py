@@ -7,12 +7,18 @@ from django.core.validators import MinValueValidator
 #     product = forms.ModelMultipleChoiceField(queryset=Order.objects.values('product__name'))
 
 class OrderForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)
+        self.fields['client'].empty_label = None
+
     class Meta:
         model = Order
         fields = ['client','product','num_units']
         labels = {'client': 'Client Name',
                   'num_units': 'Quantity'}
-        widgets= {'client': forms.RadioSelect()}
+        widgets = {
+            'client': forms.RadioSelect
+        }
 
 class InterestForm(forms.Form):
     interest = forms.BooleanField(widget=forms.RadioSelect(choices=[(True, 'Yes'),(False, 'No')]))
