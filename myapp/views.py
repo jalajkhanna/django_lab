@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from .models import Category,Product, Client, Order
+from .models import Category, Product, Client, Order, OrderForm
 from django.shortcuts import get_object_or_404, get_list_or_404
+from django.forms import forms
 
 # Create your views here.
 # def index(request):
@@ -72,7 +73,21 @@ def products(request):
     return render(request,'myapp/products.html', {'prodlist': prodlist})
 
 def place_order(request):
-    heading = '<p>'+'You can place your oder here.'+'<p>'
-    response = HttpResponse()
-    response.write(heading)
-    return response
+    msg = ''
+    prodlist = Product.objects.all()
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            if order.num_units <= order.product.stock:
+                order.save()
+                msg = 'Your order has been placed successfully.'
+                order.product.stock -= order.num_units
+            else:
+                 msg = 'We do not have sufficient stock to fill your order.'
+            return render(request, 'myapp/order_response.html', {'msg': msg})
+
+    else:
+        form = OrderForm()
+    return render(request, 'myapp/placeorder.html', {'form': form, 'msg': msg,
+                                                     'prodlist': prodlist})

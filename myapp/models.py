@@ -27,6 +27,10 @@ class Product(models.Model):
     def refill(self):
         return self.stock+100
 
+    # def updateStock(self, n):
+    #    newstock = self.stock - n
+    #    return newstock
+
 
 class Client(User):
     PROVINCE_CHOICES = [ ('AB', 'Alberta'), ('MB', 'Manitoba'), ('ON', 'Ontario'), ('QC', 'Quebec'),]

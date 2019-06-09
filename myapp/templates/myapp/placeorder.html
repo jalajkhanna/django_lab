@@ -19,7 +19,12 @@
 {% endif %}
 
 {# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
-<a href="{% url 'myapp:place order'  %}">Place Order Page</a>
+{#<a href="{% url 'myapp:about'  %}">About Page (using URL Namesapcing)</a>#}
+    <form action="/order_response/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
 {% endblock %}
 
 </body>
