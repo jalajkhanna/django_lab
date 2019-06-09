@@ -2,7 +2,7 @@ from django import forms
 from myapp.models import Order
 from django.forms import ModelForm
 
-from django.core.validators import MinValueValidator
+
 # class OrderForm(forms.ModelForm):
 #     client = forms.BooleanField()
 #     num_units = forms.IntegerField()
@@ -24,7 +24,7 @@ class OrderForm(ModelForm):
 
 class InterestForm(forms.Form):
     interest = forms.BooleanField(widget=forms.RadioSelect(choices=[(True, 'Yes'),(False, 'No')]))
-    quantity = forms.IntegerField(initial=1)
+    quantity = forms.IntegerField(initial=1, min_value=1)
     comments = forms.CharField(widget=forms.Textarea, required=False)
 
 
