@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from .models import Category, Product, Client, Order, OrderForm
+from .models import Category, Product, Client, Order
+from django.forms import ModelForm
+
 from django.shortcuts import get_object_or_404, get_list_or_404
-from django.forms import forms
+from myapp.forms import OrderForm
 
 # Create your views here.
 # def index(request):
