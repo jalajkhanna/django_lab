@@ -31,9 +31,10 @@ class Product(models.Model):
         Product.objects.filter(name=var).update(stock=newstock-num)
         return self.stock
 
-    def incrementInterested(self,pid):
-        inc = self.interested + 1
-        Product.objects.filter(id=pid).update(interested=inc)
+    def incrementInterested(self, incr):
+        inc = self.interested+incr
+        self.interested=inc
+        self.save()
         return self.interested
 
 class Client(User):

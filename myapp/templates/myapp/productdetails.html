@@ -15,7 +15,7 @@
 {% else %}
     <strong>There are no available products!</strong>
 {% endif %}
-    <form action="/order_response/" method="post">
+    <form action="/order_interest_response/{{ product.id }}/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
