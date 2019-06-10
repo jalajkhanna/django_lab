@@ -24,7 +24,7 @@ class OrderForm(ModelForm):
         }
 
 class InterestForm(forms.Form):
-    interest = forms.BooleanField(widget=forms.RadioSelect(choices=[(True, 'Yes'),(False, 'No')]))
+    interest = forms.IntegerField(widget=forms.RadioSelect(choices=[(1, 'Yes'),(0, 'No')]))
     quantity = forms.IntegerField(initial=1, min_value=1, label='yolo')
     comments = forms.CharField(widget=forms.Textarea, required=False)
 

@@ -122,10 +122,14 @@ def productdetail(request,prod_id):
 def interest_product(request,prod_id):
     if request.method == 'POST':
         form = InterestForm(request.POST)
+        response=HttpResponse()
         if form.is_valid():
-            interested= InterestForm(request.POST)
-            #if interested return postive msg
-            p = Product.objects.get(id=prod_id)
-            p.incrementInterested(1)
-            #if not interested say form kyu bhara
+            choice=form.cleaned_data['interest']
+            if choice:
+                p = Product.objects.get(id=prod_id)
+                p.incrementInterested(1)
+                response.write('success')
+            else:
+                response.write('ok not intersted...check out other products?')
+            return response
 
