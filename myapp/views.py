@@ -129,6 +129,7 @@ def interest_product(request,prod_id):
                 p = Product.objects.get(id=prod_id)
                 p.incrementInterested(1)
                 response.write('success')
+                return index(request)
             else:
                 response.write('ok not intersted...check out other products?')
             return response
