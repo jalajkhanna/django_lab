@@ -132,4 +132,5 @@ def interest_product(request,prod_id):
             else:
                 response.write('ok not intersted...check out other products?')
             return response
-
+    else:
+        return productdetail(request, prod_id)
