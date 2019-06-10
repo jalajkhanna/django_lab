@@ -101,11 +101,20 @@ def place_order(request):
 def productdetail(request,prod_id):
     product = (Product.objects.get(id=prod_id))
 
-    if request.method == 'GET':
-        form = InterestForm(request.GET)
+    msg = ''
+
+    if request.method == 'POST':
+        form = InterestForm(request.POST)
         if form.is_valid():
             interest = form.save(commit=False)
             p = Product()
-            p.incrementInterested(prod_id)
-            interest.save()
-    return render(request,'myapp/productdetails.html', {'product': product, 'form':form})
+            if form.interest == 'True':
+                p.incrementInterested(prod_id)
+                interest.save()
+                msg = 'Interest saved successfully'
+            else:
+                msg = 'Error'
+                return request,'myapp/order_response.html',{'msg':msg}
+    else:
+        form = InterestForm()
+        return render(request,'myapp/productdetails.html', {'product': product, 'form':form, 'msg':msg})
