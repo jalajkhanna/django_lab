@@ -23,4 +23,4 @@ urlpatterns = [ path(r'', views.index, name='index'),
                 path(r'products/',views.products,name='products'),
                 path(r'placeorder/',views.place_order,name='place order'),
                 path(r'order_response/',views.place_order,name='order response'),
-                path(r'products/prod_id/<int:prod_id>/',views.productdetail,name='productdetail')]
+                path(r'productdetail/<int:prod_id>/',views.productdetail,name = 'productdetail')]

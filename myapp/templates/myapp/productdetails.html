@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if product %}
+    <h2>Product Name : {{ product.name }}</h2>
+    <h2>People Interested : {{ product.interested }}</h2>
+    <h2>Product Price : {{ product.price }}</h2>
+
+{% else %}
+    <strong>There are no available products!</strong>
+{% endif %}
+    <form action="/productdetail/" method="get">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+    </form>
+
+
+{# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
+<a href="{% url 'myapp:place order'  %}">Place Order Page</a>
+{% endblock %}
+
 </body>
 </html>

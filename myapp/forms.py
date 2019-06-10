@@ -13,6 +13,7 @@ class OrderForm(ModelForm):
         super(OrderForm, self).__init__(*args, **kwargs)
         self.fields['client'].empty_label = None
 
+
     class Meta:
         model = Order
         fields = ['client','product','num_units']

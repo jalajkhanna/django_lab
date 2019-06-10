@@ -31,6 +31,10 @@ class Product(models.Model):
         Product.objects.filter(name=var).update(stock=newstock-num)
         return self.stock
 
+    def incrementInterested(self,pid):
+        inc = self.interested + 1
+        Product.objects.filter(id=pid).update(interested=inc)
+        return self.interested
 
 class Client(User):
     PROVINCE_CHOICES = [ ('AB', 'Alberta'), ('MB', 'Manitoba'), ('ON', 'Ontario'), ('QC', 'Quebec'),]

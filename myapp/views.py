@@ -4,7 +4,8 @@ from .models import Category, Product, Client, Order
 from django.forms import ModelForm
 
 from django.shortcuts import get_object_or_404, get_list_or_404
-from myapp.forms import OrderForm
+from myapp.forms import OrderForm, InterestForm
+
 
 # Create your views here.
 # def index(request):
@@ -98,9 +99,13 @@ def place_order(request):
     return render(request, 'myapp/placeorder.html', {'form': form, 'msg': msg,
                                                      'prodlist': prodlist})
 def productdetail(request,prod_id):
-    if request.method == 'POST':
-        form = forms.InterestForm(request.POST)
+    product = (Product.objects.get(id=prod_id))
+
+    if request.method == 'GET':
+        form = InterestForm(request.GET)
         if form.is_valid():
-            item = form.save(commit=False)
-            var = Product.objects.get(name=item.name)
-    return render(request,'myapp/productdetails.html', {'form': form})
+            interest = form.save(commit=False)
+            p = Product()
+            p.incrementInterested(prod_id)
+            interest.save()
+    return render(request,'myapp/productdetails.html', {'product': product, 'form':form})
