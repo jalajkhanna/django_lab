@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.utils.datetime_safe import datetime
+
 from .models import Category, Product, Client, Order
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -48,8 +50,12 @@ from django.urls import reverse
 
 def index(request):
     cat_list = Category.objects.all().order_by('id')[:10]
+    last = ''
+    if 'last_login' in request.COOKIES:
+        last_login = request.COOKIES.get('last_login','0')
+        last = last_login
 
-    return render(request, 'myapp/index.html', {'cat_list': cat_list})
+    return render(request, 'myapp/index.html', {'cat_list': cat_list,'last_login':last})
 
 
 def about(request):
@@ -58,7 +64,7 @@ def about(request):
     about_visits = int(request.COOKIES.get('about_visits', '0'))
     response = render(request, 'myapp/about.html',{'about_visits':about_visits})
     if ('last_visit') in request.COOKIES:
-        last_visit = request.COOKIES['last_visit']
+
         response.set_cookie('about_visits', about_visits + 1,max_age=300)
     else:
 
@@ -157,7 +163,11 @@ def user_login(request):
        if user:
             if user.is_active:
                  login(request, user)
-                 return HttpResponseRedirect(reverse('myapp:index'))
+
+
+                 response =  HttpResponseRedirect(reverse('myapp:index'))
+                 response.set_cookie('last_login', datetime.now(), max_age=3600)
+                 return response
             else:
                  return HttpResponse('Your account is disabled.')
        else:
@@ -169,4 +179,6 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse(('myapp:index')))
+    response =  HttpResponseRedirect(reverse(('myapp:index')))
+    response.delete_cookie('last_login')
+    return response
