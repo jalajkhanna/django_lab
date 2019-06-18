@@ -28,4 +28,8 @@ class InterestForm(forms.Form):
     quantity = forms.IntegerField(initial=1, min_value=1, label='yolo')
     comments = forms.CharField(widget=forms.Textarea, required=False)
 
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
 

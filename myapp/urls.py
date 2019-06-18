@@ -24,4 +24,6 @@ urlpatterns = [ path(r'', views.index, name='index'),
                 path(r'placeorder/',views.place_order,name='place order'),
                 path(r'order_response/',views.place_order,name='order response'),
                 path(r'productdetail/<int:prod_id>/',views.productdetail,name = 'productdetail'),
-                path(r'order_interest_response/<int:prod_id>/', views.interest_product, name='interest_product')]
+                path(r'order_interest_response/<int:prod_id>/', views.interest_product, name='interest_product'),
+                path(r'user_login/', views.user_login, name='login'),
+                path(r'user_logout/', views.user_logout, name='logout')]
