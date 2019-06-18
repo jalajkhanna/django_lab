@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import get_object_or_404, get_list_or_404
 from myapp.forms import OrderForm, InterestForm, LoginForm
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 
 # Create your views here.
 # def index(request):
@@ -179,6 +179,16 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    response =  HttpResponseRedirect(reverse(('myapp:index')))
-    response.delete_cookie('last_login')
-    return response
+    return HttpResponseRedirect(reverse(('myapp:index')))
+
+
+def myorders(request):
+    if request.user.is_authenticated:
+        name = request.user.first_name
+        orders = Order.objects.filter(client__first_name=name).values_list('product__name',flat=True)
+        return render(request,'myapp/myorders.html',{'orders':orders})
+    else:
+        return HttpResponse('You are not a registered client!')
+
+
+
