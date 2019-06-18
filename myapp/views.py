@@ -53,7 +53,18 @@ def index(request):
 
 
 def about(request):
-    return render(request,'myapp/about.html')
+
+
+    about_visits = int(request.COOKIES.get('about_visits', '0'))
+    response = render(request, 'myapp/about.html',{'about_visits':about_visits})
+    if ('last_visit') in request.COOKIES:
+        last_visit = request.COOKIES['last_visit']
+        response.set_cookie('about_visits', about_visits + 1,max_age=300)
+    else:
+
+        response.set_cookie('last_visit', '0',max_age=300)
+    return response
+
 
 
 def cat_no(request, cat_no):
