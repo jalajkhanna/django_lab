@@ -9,12 +9,7 @@
 <body>
 {% extends 'myapp/base.html' %}
 {% block body_block %}
-    {% if last_login %}
-        <h2>Last Login : {{ last_login }}</h2>
-    {% else %}
-        <h2>Your last login was more than an hour ago</h2>
-    {% endif %}
-
+        <h2>{{ last_login }}</h2>
     {% if cat_list %}
     <h2>List of Categories</h2>
     <ol>

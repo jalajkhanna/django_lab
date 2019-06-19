@@ -51,11 +51,11 @@ from django.contrib.auth.models import User
 def index(request):
     cat_list = Category.objects.all().order_by('id')[:10]
     last = ''
-    if 'last_login' in request.COOKIES:
-        last_login = request.COOKIES.get('last_login','0')
-        last = last_login
-
-    return render(request, 'myapp/index.html', {'cat_list': cat_list,'last_login':last})
+    if request.session.get('last_login_time', False):
+        last=request.session.get('last_login_time')
+    else:
+        return render(request, 'myapp/index.html', {'cat_list': cat_list, 'last_login': 'last login more than 1 hour'})
+    return render(request, 'myapp/index.html', {'cat_list': cat_list,'last_login':'last loggin time:' + last})
 
 
 def about(request):
@@ -163,10 +163,10 @@ def user_login(request):
        if user:
             if user.is_active:
                  login(request, user)
-
-
                  response =  HttpResponseRedirect(reverse('myapp:index'))
-                 response.set_cookie('last_login', datetime.now(), max_age=3600)
+                 request.session['username']=username
+                 request.session['last_login_time']=str(datetime.now())
+                 request.session.set_expiry(3600)
                  return response
             else:
                  return HttpResponse('Your account is disabled.')
