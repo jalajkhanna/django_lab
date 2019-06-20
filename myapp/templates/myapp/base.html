@@ -5,13 +5,21 @@
 <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
 <title>Online Store APP - {% block title %}Welcome!{% endblock %}</title> </head>
 <body> <div>
-<h1>{% block myhdg %}Hello {{ user.get_username }} {% endblock %}</h1>
+<h1>{% block myhdg %}Hello {% if user.is_authenticated %} {{ user.get_username }} {% else %} {{ 'user' }} {% endif %}{% endblock %}</h1>
             {% block body_block %}*** {% endblock %}
         </div>
 <hr /> <div>
 <ul>
+    {%  if user.is_authenticated %}
+    <li class="hbar1"><a href = "{% url 'myapp:logout' %}">Logout</a></li>
+        <li class="hbar1"><a href = "{%  url 'myapp:myorders' %}">My Orders</a></li>
+        {% else %}
+        <li class="hbar1"><a href = "{% url 'myapp:register' %}">Register</a></li>
+        <li class="hbar1"><a href = "{% url 'myapp:login' %}">Log in</a></li>
+    {% endif %}
 <li class="hbar1"><a href = "{% url 'myapp:about' %}">Find out about this
    site</a></li>
+
 <li class="hbar1"><a href = "{% url 'myapp:index' %}">Click here to return to main page</a></li>
 
 <li class="hbar1"><a href = "{% url 'myapp:products' %}">Click here to view products</a><br/></li>

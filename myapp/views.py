@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import get_object_or_404, get_list_or_404
 from myapp.forms import OrderForm, InterestForm, LoginForm
+from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
 from django.contrib.auth.models import User
 
@@ -189,6 +190,23 @@ def myorders(request):
         return render(request,'myapp/myorders.html',{'orders':orders})
     else:
         return HttpResponse('You are not a registered client!')
+
+def register(request):
+    if request.method== 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            pwd = form.cleaned_data.get('password1')
+            user=authenticate(username=username,password=pwd)
+            login(request,user)
+            return HttpResponseRedirect(reverse(('myapp:index')))
+        else:
+            return HttpResponse('Invalid')
+    form = UserCreationForm()
+    return render(request,'myapp/register.html',{'form':form})
+
+
 
 
 

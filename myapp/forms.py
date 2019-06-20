@@ -1,6 +1,7 @@
 from django import forms
 from myapp.models import Order
 from django.forms import ModelForm
+from django.contrib.auth.models import User
 
 
 # class OrderForm(forms.ModelForm):
@@ -32,4 +33,9 @@ class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
+# class UserProfile(ModelForm):
+#     password = forms.CharField(required=True, widget=forms.PasswordInput)
+#     class Meta:
+#         model = User
+#         fields = ('username','password','email')
 
