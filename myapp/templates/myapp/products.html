@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Title</title>
 </head>
 <body>
 {% extends 'myapp/base.html' %}
 {% block body_block %}
     {% if prodlist %}
-    <h2>List of Products</h2>
+        <div class="container-fluid">
+        <h2>List of Products</h2>
 
         {% for product  in prodlist %}
-            <a href="/myapp/productdetail/{{ product.id }}"> <p> {{ product.id }}.   {{  product.name}} </p></a>
-        {% endfor %}
+            <ul class="list-group">
+            <li class="list-group-item"><a href="/myapp/productdetail/{{ product.id }}">{{ product.id }}.   {{  product.name}}</a></li>
+            </ul>
 
+        {% endfor %}
+        <a href="{% url 'myapp:place order'  %}" class="btn btn-primary btn-lg btn-block" role="button">Place your orders here</a>
 {% else %}
     <strong>There are no available products!</strong>
 {% endif %}
+        </div>
+
 
 {# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
-<a href="{% url 'myapp:place order'  %}">Place Order Page</a>
+
 {% endblock %}
 
 </body>

@@ -4,7 +4,6 @@ from .models import Product, Category, Client, Order
 # Register your models here.
 
 admin.site.register(Category)
-admin.site.register(Client)
 admin.site.register(Order)
 
 
@@ -21,6 +20,11 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(Product, ProductAdmin)
 
 
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'city')
 
+
+
+admin.site.register(Client, ClientAdmin)
 
 

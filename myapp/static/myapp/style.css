@@ -1,5 +1,6 @@
+
+
 h1 {
-    background-color: #bbccdd;
     text-align:center;
     font-size: 16px;
     font-style: normal;
@@ -9,3 +10,8 @@ h1 {
     display: inline;
     margin: 15px;
 }
+
+.category {
+    margin-top: 80px;
+}
+

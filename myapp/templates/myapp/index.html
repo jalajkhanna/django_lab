@@ -3,20 +3,30 @@
 <html lang="en">
 <head>
 
+
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 {% extends 'myapp/base.html' %}
 {% block body_block %}
-        <h2>{{ last_login }}</h2>
+
+        <h4> <span class="badge badge-secondary" style="float: right; margin-right: 5px" >{{ last_login }}</span></h4>
+
+
     {% if cat_list %}
+<div class="category">
+    <div class="container-fluid">
     <h2>List of Categories</h2>
-    <ol>
+    <ul class="list-group">
         {% for cat  in cat_list %}
-            <li> {{ cat.name}} </li>
+            <li class="list-group-item"> {{ cat.name}} </li>
         {% endfor %}
-    </ol>
+    </ul>
+    </div>
+</div>
+
+
 {% else %}
     <strong>There are no available categories!</strong>
 {% endif %}
