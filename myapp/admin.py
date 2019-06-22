@@ -23,3 +23,4 @@ admin.site.register(Product, ProductAdmin)
 
 
 
+

@@ -45,6 +45,7 @@ class Client(User):
     city = models.CharField(max_length=20, default='Windsor')
     province=models.CharField(max_length=2, choices=PROVINCE_CHOICES, default='ON')
     interested_in = models.ManyToManyField(Category)
+    image = models.ImageField(upload_to="myapp/static/myapp/client_pic", blank=True)
 
     def __str__(self):
         result = User.get_full_name(self)

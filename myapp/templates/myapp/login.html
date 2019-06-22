@@ -10,6 +10,9 @@
     <form action="/user_login/" method="post">
     {% csrf_token %}
     {{ form }}
+        {% if request.GET.next %}
+            <input type="hidden"  name="next" value="{{ request.GET.next }}">
+        {% endif %}
     <input type="submit" value="Submit">
     </form>
 {% endblock %}

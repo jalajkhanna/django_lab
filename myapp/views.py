@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.utils.datetime_safe import datetime
 
@@ -56,7 +56,7 @@ def index(request):
         last=request.session.get('last_login_time')
     else:
         return render(request, 'myapp/index.html', {'cat_list': cat_list, 'last_login': 'last login more than 1 hour'})
-    return render(request, 'myapp/index.html', {'cat_list': cat_list,'last_login':'last loggin time:' + last})
+    return render(request, 'myapp/index.html', {'cat_list': cat_list,'last_login':'last login time:' + last})
 
 
 def about(request):
@@ -157,39 +157,44 @@ def interest_product(request,prod_id):
 
 
 def user_login(request):
+
    if request.method == 'POST':
-       username = request.POST['username']
-       password = request.POST['password']
-       user = authenticate(username=username, password=password)
-       if user:
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user:
             if user.is_active:
                  login(request, user)
-                 response =  HttpResponseRedirect(reverse('myapp:index'))
-                 request.session['username']=username
-                 request.session['last_login_time']=str(datetime.now())
-                 request.session.set_expiry(3600)
-                 return response
+                 if 'next' in request.POST:
+                     return redirect(request.POST.get('next'))
+                 else:
+                    response =  HttpResponseRedirect(reverse('myapp:index'))
+                    request.session['username']=username
+                    request.session['last_login_time']=str(datetime.now())
+                    request.session.set_expiry(3600)
+                    return response
             else:
                  return HttpResponse('Your account is disabled.')
-       else:
+        else:
             return HttpResponse('Invalid login details.')
    else:
        form = LoginForm()
        return render(request, 'myapp/login.html', {'form':form})
+
+
 
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse(('myapp:index')))
 
-
+@login_required(login_url='/myapp/user_login/')
 def myorders(request):
-    if request.user.is_authenticated:
+
         name = request.user.first_name
         orders = Order.objects.filter(client__first_name=name).values_list('product__name',flat=True)
         return render(request,'myapp/myorders.html',{'orders':orders})
-    else:
-        return HttpResponse('You are not a registered client!')
+
 
 def register(request):
     if request.method== 'POST':
