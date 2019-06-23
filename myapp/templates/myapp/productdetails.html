@@ -7,23 +7,47 @@
 <body>
 {% extends 'myapp/base.html' %}
 {% block body_block %}
+    {% load bootstrap %}
     {% if product %}
-    <h2>Product Name : {{ product.name }}</h2>
-    <h2>People Interested : {{ product.interested }}</h2>
-    <h2>Product Price : {{ product.price }}</h2>
+        <div class="container">
+{#        <ul class="list-group">#}
+{#            <li class=list-group-item">Product Name : {{ product.name }}</li>#}
+{#    <li class=list-group-item">People Interested : {{ product.interested }}</li>#}
+{#    <li class=list-group-item">Product Price : {{ product.price }}</li>#}
+{#        </ul>#}
+        <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Product Name :
+    <span class="badge badge-primary badge-pill">{{ product.name }}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    People Interested :
+    <span class="badge badge-primary badge-pill">{{ product.interested }}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Product Price :
+    <span class="badge badge-primary badge-pill">{{ product.price }}</span>
+  </li>
+</ul>
+
+        </div>
+
 
 {% else %}
     <strong>There are no available products!</strong>
 {% endif %}
+    <div class="container">
     <form action="/order_interest_response/{{ product.id }}/" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    {{ form|bootstrap_horizontal:'col-sm-2' }}
+    <input type="submit" value="Submit" class="btn btn-primary">
     </form>
 
+    <a href="{% url 'myapp:place order'  %}" class="btn btn-primary btn-sm btn-block" role="button">Place your orders here</a>
+    </div>
 
 {# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
-<a href="{% url 'myapp:place order'  %}">Place Order Page</a>
+
 {% endblock %}
 
 </body>
