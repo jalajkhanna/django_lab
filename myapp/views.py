@@ -9,7 +9,6 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from myapp.forms import OrderForm, InterestForm, LoginForm
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
-from django.contrib.auth.models import User
 
 # Create your views here.
 # def index(request):
@@ -94,6 +93,8 @@ def products(request):
     prodlist = Product.objects.all().order_by('id')[:10]
     return render(request,'myapp/products.html', {'prodlist': prodlist})
 
+
+@login_required(login_url='/myapp/user_login/')
 def place_order(request):
     msg = ''
     prodlist = Product.objects.all()
@@ -101,11 +102,12 @@ def place_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
+
             if order.num_units <= order.product.stock:
 
                 var = Product.objects.get(name=order.product)
                 newstock = Product.objects.filter(name=var).values_list('stock',flat=True).get()
-                msg = 'Your order has been placed successfully.'+str(var) +str(order.num_units)+str(newstock)
+                msg = 'Your order has been placed successfully.'
                 p = Product()
                 p.updateStock(var,newstock,order.num_units)
                 order.save()

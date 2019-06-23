@@ -7,8 +7,10 @@
 <body>
 {% extends 'myapp/base.html' %}
 {% block body_block %}
+    {% load bootstrap %}
     {% if prodlist %}
-    <h2>List of Products</h2>
+        <div class="container-fluid">
+        <h2>List of Products</h2>
     <ol>
         {% for product  in prodlist %}
             <li> {{ product.name}} </li>
@@ -17,14 +19,23 @@
 {% else %}
     <strong>There are no available products!</strong>
 {% endif %}
+        </div>
+
 
 {# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
 {#<a href="{% url 'myapp:about'  %}">About Page (using URL Namesapcing)</a>#}
-    <form action="/order_response/" method="post">
+<div class="form-row">
+<form action="/order_response/" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    {{ form|bootstrap_horizontal:'col-sm-2' }}
+        {% if request.GET.next %}
+            <input type="hidden"  name="next" value="{{ request.GET.next }}">
+        {% endif %}
+    <input type="submit" value="Submit" class="btn btn-primary">
 </form>
+</div>
+
+
 {% endblock %}
 
 </body>
