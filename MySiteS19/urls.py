@@ -20,5 +20,6 @@ from django.conf.urls import url
 urlpatterns = [
     url(r'myapp/', include('myapp.urls',namespace='myapp')),
     path('admin/', admin.site.urls),
-    path(r'', include('myapp.urls',namespace='myapp'))
+    path(r'', include('myapp.urls',namespace='myapp')),
+     url('^', include('django.contrib.auth.urls'))
 ]
