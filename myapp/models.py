@@ -51,6 +51,7 @@ class Client(User):
         result = User.get_full_name(self)
         return result
 
+
 class Order(models.Model):
     STATUS_CHOICES = [(0,'Order Cancelled'),(1, 'Order Placed'),(2, 'Order Shipped'),(3, 'Order Delivered')]
     product = models.ForeignKey(Product, related_name='orders',on_delete=models.CASCADE)

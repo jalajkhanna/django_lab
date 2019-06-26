@@ -21,7 +21,10 @@ admin.site.register(Product, ProductAdmin)
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'city')
+    list_display = ('first_name', 'last_name', 'city', 'get_products')
+
+    def get_products(self,obj):
+        return "\n".join([c.name for c in obj.interested_in.all()])
 
 
 

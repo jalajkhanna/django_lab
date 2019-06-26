@@ -20,13 +20,13 @@ class OrderForm(ModelForm):
         fields = ['client','product','num_units']
         labels = {'client': 'Client Name',
                   'num_units': 'Quantity'}
-        widgets = {
-            'client': forms.RadioSelect
-        }
+        # widgets = {
+        #     'client': forms.RadioSelect
+        # }
 
 class InterestForm(forms.Form):
     interest = forms.IntegerField(widget=forms.RadioSelect(choices=[(1, 'Yes'),(0, 'No')]))
-    quantity = forms.IntegerField(initial=1, min_value=1, label='yolo')
+    quantity = forms.IntegerField(initial=1, min_value=1, label='Quantity')
     comments = forms.CharField(widget=forms.Textarea, required=False)
 
 class LoginForm(forms.Form):
