@@ -134,6 +134,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             pwd = form.cleaned_data.get('password1')
+
             user=authenticate(username=username,password=pwd)
             login(request,user)
             return HttpResponseRedirect(reverse(('myapp:index')))
