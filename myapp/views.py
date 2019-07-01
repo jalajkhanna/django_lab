@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from myapp.forms import OrderForm, InterestForm, LoginForm, SignUpForm
 from django.urls import reverse
+from django.core.mail import send_mail
+from django.conf import settings
 
 def index(request):
     cat_list = Category.objects.all().order_by('id')[:10]
@@ -18,8 +20,6 @@ def index(request):
 
 
 def about(request):
-
-
     about_visits = int(request.COOKIES.get('about_visits', '0'))
     response = render(request, 'myapp/about.html',{'about_visits':about_visits})
     if ('last_visit') in request.COOKIES:
@@ -143,6 +143,12 @@ def register(request):
     return render(request,'myapp/register.html',{'form':form})
 
 
-
+def email(request):
+    subject = 'Thank you for registering to our site'
+    message = ' it  means a world to us '
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = ['jalaj.khanna@gmail.com',]
+    send_mail( 'yo', 'test', settings.EMAIL_HOST_USER, ['jalaj.khanna@gmail.com'] )
+    return HttpResponseRedirect(reverse(('myapp:index')))
 
 

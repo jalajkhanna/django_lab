@@ -41,10 +41,16 @@ INSTALLED_APPS = [
     'bootstrapform',
     'crispy_forms'
 ]
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'djangosinghg5@gmail.com'
+EMAIL_HOST_PASSWORD = 'hellohi123'
+DEFAULT_FROM_EMAIL   = EMAIL_HOST_USER
+EMAIL_FROM           = EMAIL_HOST_USER
+EMAIL_SUBJECT_PREFIX = '[Project] '
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

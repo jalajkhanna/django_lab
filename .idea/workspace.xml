@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f06e27a2-2e8a-4409-b014-036d41798ad1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySiteS19/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MySiteS19/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_subject.txt" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_subject.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,52 +58,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/products.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="131" column="40" lean-forward="true" selection-start-line="131" selection-start-column="40" selection-end-line="131" selection-end-column="40" />
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -101,58 +69,72 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/models.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="33" column="96" selection-start-line="33" selection-start-column="96" selection-end-line="33" selection-end-column="96" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/myapp_client">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/myapp_order">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/productdetails.html">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="15">
+              <caret line="1" column="19" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/auth_user">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
-              <filtering>
-                <filter text="" />
-              </filtering>
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_complete.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_confirm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_done.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_email.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_subject.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -166,12 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>static</find>
-      <find>install</find>
-      <find>order_res</find>
-      <find>interest</find>
-      <find>order_response</find>
-      <find>installed_a</find>
       <find>InterestForm</find>
       <find>form</find>
       <find>middle</find>
@@ -192,6 +168,16 @@
       <find>user</find>
       <find>OrderForm</find>
       <find>Client</find>
+      <find>Enter your email address below, and we'll email instructions for setting a new one.</find>
+      <find>webmaster@localhost</find>
+      <find>djangosinghg5@gmail.com</find>
+      <find>index</find>
+      <find>password_reset</find>
+      <find>Your password has been set</find>
+      <find>base</find>
+      <find>password has</find>
+      <find>password has been</find>
+      <find>Your password has been set. You may go ahead and log in now.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,20 +194,24 @@
         <option value="$PROJECT_DIR$/myapp/templates/purchase.html" />
         <option value="$PROJECT_DIR$/myapp/static/MainStyle.css" />
         <option value="$PROJECT_DIR$/myapp/templates/login.html" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/login.html" />
         <option value="$PROJECT_DIR$/myapp/urls.py" />
         <option value="$PROJECT_DIR$/myapp/admin.py" />
-        <option value="$PROJECT_DIR$/MySiteS19/settings.py" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/myorders.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/products.html" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/base.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/placeorder.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/productdetails.html" />
         <option value="$PROJECT_DIR$/myapp/models.py" />
         <option value="$PROJECT_DIR$/myapp/forms.py" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/register.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/login.html" />
+        <option value="$PROJECT_DIR$/MySiteS19/settings.py" />
         <option value="$PROJECT_DIR$/myapp/views.py" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_form.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_confirm.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_complete.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/base.html" />
       </list>
     </option>
   </component>
@@ -253,6 +243,27 @@
               <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
               <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="client_pic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,7 +276,20 @@
             <path>
               <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
               <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
               <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+              <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySiteS19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySiteS19" type="462c0819:PsiDirectoryNode" />
+              <item name="sent_emails" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,12 +309,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/myapp/templates/myapp" />
       <recent name="$PROJECT_DIR$/myapp/static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -344,12 +368,12 @@
       <workItem from="1557687827539" duration="9013000" />
       <workItem from="1560819682457" duration="2020000" />
       <workItem from="1560949827147" duration="2025000" />
-      <workItem from="1561954334023" duration="11550000" />
+      <workItem from="1561954334023" duration="16702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31701000" />
+    <option name="totallyTimeSpent" value="36853000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,20 +389,20 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29906026" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.29906026" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" weight="0.32212028" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32925585" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32008156" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32008156" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32925585" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="5" />
-      <window_info anchor="bottom" id="manage.py@MySiteS19" order="6" weight="0.32984293" />
+      <window_info anchor="bottom" id="manage.py@MySiteS19" order="6" weight="0.32925585" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.32517838" />
-      <window_info active="true" anchor="bottom" id="Debug" order="10" visible="true" weight="0.39959225" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39959225" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32925585" />
@@ -449,11 +473,21 @@
           <line>133</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/myapp/views.py</url>
+          <line>151</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>form</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>form['image']</expression-string>
         <language-id>Python</language-id>
@@ -461,11 +495,6 @@
       </expression>
       <expression>
         <expression-string>form[]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>form</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -502,27 +531,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myapp/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myaccount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/MainStyle.css" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="597" column="16" selection-start-line="597" selection-start-column="16" selection-end-line="597" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/success.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -561,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/django/contrib/auth/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1845">
@@ -579,16 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MySiteS19/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -624,31 +615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/django/contrib/auth/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/crispy_forms/tests/test_settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MySiteS19/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
@@ -675,23 +645,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h4#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,22 +680,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/auth_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
           <filtering>
             <filter text="" />
           </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/myapp_order">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/static/myapp/client_pic/Dwayne_The_Rock_Johnson_2009_street_portrait.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/myapp_client">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sent_emails/20190701-075651-140681152069928.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="136" column="7" lean-forward="true" selection-start-line="136" selection-start-column="7" selection-end-line="136" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sent_emails/20190701-080249-139911402585616.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sent_emails/20190701-080530-140232426879520.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sent_emails/20190701-080755-140232144956888.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sent_emails/20190701-081255-139735930371320.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MySiteS19/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,55 +780,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/django/contrib/auth/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-444">
+          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MySiteS19/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="43" column="61" lean-forward="true" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="315">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/products.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/myapp_order">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4c51fd5f-7c62-4a25-aa32-61740b2c352b/schema/main/table/myapp_client">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="40aef043-ae0c-4811-86ab-ede9c8497d0b">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="131" column="40" lean-forward="true" selection-start-line="131" selection-start-column="40" selection-end-line="131" selection-end-column="40" />
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_subject.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/python3.5/site-packages/django/contrib/admin/templates/admin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/registration/password_reset_complete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="33" column="96" selection-start-line="33" selection-start-column="96" selection-end-line="33" selection-end-column="96" />
         </state>
       </provider>
     </entry>
