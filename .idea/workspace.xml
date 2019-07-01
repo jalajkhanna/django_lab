@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f06e27a2-2e8a-4409-b014-036d41798ad1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySiteS19/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MySiteS19/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/about0.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/detail0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/index0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +51,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            <state relative-caret-position="85">
+              <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -90,11 +80,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+            <state relative-caret-position="465">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,6 +151,7 @@
       <find>crispy_temp</find>
       <find>installed</find>
       <find>crispy</find>
+      <find>last login more than 1 hour</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,9 +176,9 @@
         <option value="$PROJECT_DIR$/myapp/admin.py" />
         <option value="$PROJECT_DIR$/MySiteS19/settings.py" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/register.html" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/base.html" />
         <option value="$PROJECT_DIR$/myapp/forms.py" />
         <option value="$PROJECT_DIR$/myapp/views.py" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/base.html" />
       </list>
     </option>
   </component>
@@ -307,12 +301,12 @@
       <workItem from="1557687827539" duration="9013000" />
       <workItem from="1560819682457" duration="2020000" />
       <workItem from="1560949827147" duration="2025000" />
-      <workItem from="1561954334023" duration="3641000" />
+      <workItem from="1561954334023" duration="4476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23792000" />
+    <option name="totallyTimeSpent" value="24627000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,9 +322,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.29906026" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29906026" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" visible="true" weight="0.32212028" />
+      <window_info anchor="bottom" id="Database Console" weight="0.32212028" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32925585" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.31294596" />
@@ -341,7 +335,7 @@
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.32925585" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.39959225" />
+      <window_info anchor="bottom" id="Debug" order="10" visible="true" weight="0.39959225" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32925585" />
@@ -394,28 +388,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/myapp/views.py</url>
-          <line>101</line>
+          <line>53</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/myapp/views.py</url>
-          <line>99</line>
+          <line>51</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/myapp/views.py</url>
-          <line>142</line>
+          <line>80</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/myapp/views.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/myapp/views.py</url>
           <line>139</line>
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -682,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/products.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -725,8 +707,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        <state relative-caret-position="465">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
         </state>
       </provider>
     </entry>
