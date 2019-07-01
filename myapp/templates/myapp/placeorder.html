@@ -1,42 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 {% extends 'myapp/base.html' %}
+{% load crispy_forms_tags %}
 {% block body_block %}
     {% load bootstrap %}
     {% if prodlist %}
         <div class="container-fluid">
         <h2>List of Products</h2>
-    <ol>
-        {% for product  in prodlist %}
-            <li> {{ product.name}} </li>
-        {% endfor %}
-    </ol>
-{% else %}
-    <strong>There are no available products!</strong>
-{% endif %}
-        </div>
-
-
-{# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
-{#<a href="{% url 'myapp:about'  %}">About Page (using URL Namesapcing)</a>#}
-<div class="form-row">
-<form action="/order_response/" method="post">
-    {% csrf_token %}
-    {{ form|bootstrap_horizontal:'col-sm-2' }}
-        {% if request.GET.next %}
-            <input type="hidden"  name="next" value="{{ request.GET.next }}">
-        {% endif %}
-    <input type="submit" value="Submit" class="btn btn-primary">
-</form>
+        <ol>
+            {% for product  in prodlist %}
+                <li> {{ product.name }} </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available products!</strong>
+    {% endif %}
 </div>
-
-
+    <div class="form-row">
+        <form action="/order_response/" method="post">
+            {% csrf_token %}
+            {{ form| crispy }}
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+            {% endif %}
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
 {% endblock %}
-
-</body>
-</html>

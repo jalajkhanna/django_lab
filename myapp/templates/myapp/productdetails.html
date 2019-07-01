@@ -1,54 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 {% extends 'myapp/base.html' %}
+{% load bootstrap %}
+{% load crispy_forms_tags %}
 {% block body_block %}
-    {% load bootstrap %}
     {% if product %}
-        <div class="container">
-{#        <ul class="list-group">#}
-{#            <li class=list-group-item">Product Name : {{ product.name }}</li>#}
-{#    <li class=list-group-item">People Interested : {{ product.interested }}</li>#}
-{#    <li class=list-group-item">Product Price : {{ product.price }}</li>#}
-{#        </ul>#}
-        <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Product Name :
-    <span class="badge badge-primary badge-pill">{{ product.name }}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    People Interested :
-    <span class="badge badge-primary badge-pill">{{ product.interested }}</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Product Price :
-    <span class="badge badge-primary badge-pill">{{ product.price }}</span>
-  </li>
-</ul>
-
-        </div>
-
-
-{% else %}
-    <strong>There are no available products!</strong>
-{% endif %}
-    <div class="container">
-    <form action="/order_interest_response/{{ product.id }}/" method="post">
-    {% csrf_token %}
-    {{ form|bootstrap_horizontal:'col-sm-2' }}
-    <input type="submit" value="Submit" class="btn btn-primary">
-    </form>
-
-    <a href="{% url 'myapp:place order'  %}" class="btn btn-primary btn-sm btn-block" role="button">Place your orders here</a>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Product Name :
+                    <span class="badge badge-primary badge-pill">{{ product.name }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    People Interested :
+                    <span class="badge badge-primary badge-pill">{{ product.interested }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Product Price :
+                    <span class="badge badge-primary badge-pill">{{ product.price }}</span>
+                </li>
+            </ul>
+    {% else %}
+        <strong>This prodcut is not available!</strong>
+    {% endif %}
+    <div class="container mt-2 mb-2 border">
+        <form action="/order_interest_response/{{ product.id }}/" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Submit" class="btn btn-primary mb-1">
+        </form>
     </div>
-
-{# <p><a href="/myapp/about">About page (hard coded)</a></p>#}
-
+    <a href="{% url 'myapp:place order' %}" class="btn btn-info mt-2" role="button">I want to order this</a>
 {% endblock %}
 
-</body>
 </html>

@@ -10,7 +10,6 @@ from django.urls import reverse
 
 def index(request):
     cat_list = Category.objects.all().order_by('id')[:10]
-    last = ''
     if request.session.get('last_login_time', False):
         last=request.session.get('last_login_time')
     else:
@@ -24,14 +23,11 @@ def about(request):
     about_visits = int(request.COOKIES.get('about_visits', '0'))
     response = render(request, 'myapp/about.html',{'about_visits':about_visits})
     if ('last_visit') in request.COOKIES:
-
         response.set_cookie('about_visits', about_visits + 1,max_age=300)
     else:
 
         response.set_cookie('last_visit', '0',max_age=300)
     return response
-
-
 
 def cat_no(request, cat_no):
      try:
@@ -41,7 +37,7 @@ def cat_no(request, cat_no):
      return render(request,'myapp/detail.html',{'warehouse_loc': warehouse_loc, 'prod_list': prod_list} )
 
 def products(request):
-    prodlist = Product.objects.all().order_by('id')[:10]
+    prodlist = Product.objects.all().order_by('id')
     return render(request,'myapp/products.html', {'prodlist': prodlist})
 
 
@@ -53,9 +49,7 @@ def place_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
-
             if order.num_units <= order.product.stock:
-
                 var = Product.objects.get(name=order.product)
                 newstock = Product.objects.filter(name=var).values_list('stock',flat=True).get()
                 msg = 'Your order has been placed successfully.'
@@ -72,7 +66,6 @@ def place_order(request):
                                                      'prodlist': prodlist})
 def productdetail(request,prod_id):
     product = (Product.objects.get(id=prod_id))
-
     msg = ''
     form = InterestForm()
     return render(request,'myapp/productdetails.html', {'product': product, 'form':form, 'msg':msg})
@@ -96,22 +89,22 @@ def interest_product(request,prod_id):
 
 
 def user_login(request):
-
    if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
-                 login(request, user)
-                 if 'next' in request.POST:
+                login(request, user)
+                response =  HttpResponseRedirect(reverse('myapp:index'))
+                request.session['username']=username
+                request.session['last_login_time']=str(datetime.now())
+                request.session.set_expiry(3600)
+                if 'next' in request.POST:
                      return redirect(request.POST.get('next'))
-                 else:
-                    response =  HttpResponseRedirect(reverse('myapp:index'))
-                    request.session['username']=username
-                    request.session['last_login_time']=str(datetime.now())
-                    request.session.set_expiry(3600)
+                else:
                     return response
+
             else:
                  return HttpResponse('Your account is disabled.')
         else:
@@ -129,7 +122,6 @@ def user_logout(request):
 
 @login_required(login_url='/myapp/user_login/')
 def myorders(request):
-
         name = request.user.first_name
         orders = Order.objects.filter(client__first_name=name).values_list('product__name',flat=True)
         return render(request,'myapp/myorders.html',{'orders':orders})
