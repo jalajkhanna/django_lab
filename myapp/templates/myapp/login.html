@@ -4,7 +4,7 @@
 {% block body_block %}
 
     <div class="form-row">
-        <form action="/user_login/" method="post">
+        <form action="/myapp/user_login/" method="post">
             {% csrf_token %}
             {{ form|crispy }}
             {% if request.GET.next %}

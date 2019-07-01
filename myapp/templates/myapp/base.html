@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}"/>
 
     <title>Online Store APP - {% block title %}Welcome!{% endblock %}</title></head>
-<body>
+<body class="bg-light">
 <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <a class="navbar-brand" href="{% url 'myapp:index' %}">Home</a>
@@ -41,7 +41,7 @@
     <h1 class="h1 mb-1">{% block myhdg %}Hello {% if user.is_authenticated %} {{ user.get_username }} {% else %}
         {{ 'user' }}
     {% endif %}{% endblock %}</h1>
-    <div class="container pt-4 pb-3 border">
+    <div class="container pt-4 pb-3 border bg-white">
         {% block body_block %}*** {% endblock %}
     </div>
 </div>

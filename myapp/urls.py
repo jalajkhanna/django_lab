@@ -17,13 +17,13 @@ from myapp import views
 # ]
 
 app_name = 'myapp'
-urlpatterns = [ path(r'', views.index, name='index'),
+urlpatterns = [ path(r'', views.indexView.as_view(), name='index'),
                 path(r'about/',views.about, name='about'),
                 path('cat_no/<int:cat_no>/', views.cat_no),
                 path(r'products/',views.products,name='products'),
                 path(r'placeorder/',views.place_order,name='place order'),
                 path(r'order_response/',views.place_order,name='order response'),
-                path(r'productdetail/<int:prod_id>/',views.productdetail,name = 'productdetail'),
+                path(r'productdetail/<int:prod_id>/',views.productDetailView.as_view(),name = 'productdetail'),
                 path(r'order_interest_response/<int:prod_id>/', views.interest_product, name='interest_product'),
                 path(r'user_login/', views.user_login, name='login'),
                 path(r'user_logout/', views.user_logout, name='logout'),

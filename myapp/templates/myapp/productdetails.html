@@ -21,7 +21,7 @@
         <strong>This prodcut is not available!</strong>
     {% endif %}
     <div class="container mt-2 mb-2 border">
-        <form action="/order_interest_response/{{ product.id }}/" method="post">
+        <form action="/myapp/order_interest_response/{{ product.id }}/" method="post">
             {% csrf_token %}
             {{ form|crispy }}
             <input type="submit" value="Submit" class="btn btn-primary mb-1">

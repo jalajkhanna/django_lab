@@ -15,7 +15,7 @@
     {% endif %}
 </div>
     <div class="form-row">
-        <form action="/order_response/" method="post">
+        <form action="/myapp/order_response/" method="post">
             {% csrf_token %}
             {{ form| crispy }}
             {% if request.GET.next %}

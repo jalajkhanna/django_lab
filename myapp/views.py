@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.utils.datetime_safe import datetime
+from django.views import View
 
 from .models import Category, Product, Client, Order
 from django.contrib.auth import authenticate, login, logout
@@ -10,13 +11,23 @@ from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
 
-def index(request):
-    cat_list = Category.objects.all().order_by('id')[:10]
-    if request.session.get('last_login_time', False):
-        last=request.session.get('last_login_time')
-    else:
-        return render(request, 'myapp/index.html', {'cat_list': cat_list, 'last_login': 'last login more than 1 hour'})
-    return render(request, 'myapp/index.html', {'cat_list': cat_list,'last_login':'last login time:' + last})
+class indexView(View):
+    def get(self, request):
+        cat_list = Category.objects.all().order_by('id')[:10]
+        if request.session.get('last_login_time', False):
+            last = request.session.get('last_login_time')
+        else:
+            return render(request, 'myapp/index.html',
+                          {'cat_list': cat_list, 'last_login': 'last login more than 1 hour'})
+        return render(request, 'myapp/index.html', {'cat_list': cat_list, 'last_login': 'last login time:' + last})
+
+class productDetailView(View):
+    def get(self, request, prod_id):
+        product = (Product.objects.get(id=prod_id))
+        msg = ''
+        form = InterestForm()
+        return render(request, 'myapp/productdetails.html', {'product': product, 'form': form, 'msg': msg})
+
 
 
 def about(request):
@@ -34,6 +45,7 @@ def cat_no(request, cat_no):
          warehouse_loc = (Category.objects.get(id=cat_no).warehouse)
      except Category.DoesNotExist:
          raise Http404("Category not found")
+     prod_list = get_list_or_404(Product.objects.filter(category__id__contains=cat_no))
      return render(request,'myapp/detail.html',{'warehouse_loc': warehouse_loc, 'prod_list': prod_list} )
 
 def products(request):
@@ -64,11 +76,6 @@ def place_order(request):
         form = OrderForm()
     return render(request, 'myapp/placeorder.html', {'form': form, 'msg': msg,
                                                      'prodlist': prodlist})
-def productdetail(request,prod_id):
-    product = (Product.objects.get(id=prod_id))
-    msg = ''
-    form = InterestForm()
-    return render(request,'myapp/productdetails.html', {'product': product, 'form':form, 'msg':msg})
 
 def interest_product(request,prod_id):
     if request.method == 'POST':
@@ -80,12 +87,12 @@ def interest_product(request,prod_id):
                 p = Product.objects.get(id=prod_id)
                 p.incrementInterested(1)
                 response.write('success')
-                return index(request)
+                return HttpResponseRedirect(reverse('myapp:index'))
             else:
                 response.write('ok not intersted...check out other products?')
             return response
     else:
-        return productdetail(request, prod_id)
+        return HttpResponseRedirect(reverse("myapp:productdetail", args=(prod_id,)))
 
 
 def user_login(request):
