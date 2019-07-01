@@ -4,49 +4,9 @@ from django.utils.datetime_safe import datetime
 
 from .models import Category, Product, Client, Order
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required, user_passes_test
-from django.shortcuts import get_object_or_404, get_list_or_404
-from myapp.forms import OrderForm, InterestForm, LoginForm
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from myapp.forms import OrderForm, InterestForm, LoginForm, SignUpForm
 from django.urls import reverse
-
-# Create your views here.
-# def index(request):
-#     return render(request, 'index.html')
-# def about(request):
-#     return render(request, 'about.html')
-# def myaccount(request):
-#     return render(request, 'myaccount.html')
-# def purchase(request):
-#     return render(request, 'purchase.html')
-# def successorder(request):
-#     return render(request, 'success.html')
-# def clothing(request):
-#     return render(request, 'clothing.html')
-# def equipment(request):
-#     return render(request, 'equipment.html')
-# def otheritem(request):
-#     return render(request, 'otheritem.html')
-# def productdetails(request):
-#     return render(request, 'productdetails.html')
-#
-# def index(request):
-#     cat_list = Category.objects.all().order_by('id')[:10]
-#     product_list = Product.objects.all().order_by('-price')[:5]
-#     response = HttpResponse()
-#     heading1 = '<p>' + 'List of categories: ' + '</p>'
-#     response.write(heading1)
-#     for category in cat_list:
-#         para = '<p>' + str(category.id) + ': ' + str(category) + '</p>'
-#         response.write(para)
-#     heading2 = '<p>' + 'List of Products: ' + '</p>'
-#     response.write(heading2)
-#     for index,product in enumerate(product_list):
-#         p2 = '<p>' + str(index+1) + ':' + str(product) + '</p>'
-#         response.write(p2)
-#
-#     return response
-
 
 def index(request):
     cat_list = Category.objects.all().order_by('id')[:10]
@@ -78,15 +38,6 @@ def cat_no(request, cat_no):
          warehouse_loc = (Category.objects.get(id=cat_no).warehouse)
      except Category.DoesNotExist:
          raise Http404("Category not found")
-     prod_list = get_list_or_404(Product.objects.filter(category__id__contains=cat_no))
-    # response = HttpResponse()
-    # for location in warehouse_loc:
-    #     para1 = '<p>' + 'Location of the  warehouse : ' + str(location[0]) + '</p>'
-    #     response.write(para1)
-    # for index,products in enumerate(prod_list):
-    #     para2 = '<p>' + 'Product ' + str(index+1) + ':' + str(products) + '</p>'
-    #     response.write(para2)
-    # return response
      return render(request,'myapp/detail.html',{'warehouse_loc': warehouse_loc, 'prod_list': prod_list} )
 
 def products(request):
@@ -123,20 +74,6 @@ def productdetail(request,prod_id):
     product = (Product.objects.get(id=prod_id))
 
     msg = ''
-    #
-    # if request.method == 'POST':
-    #     form = InterestForm(request.POST)
-    #     if form.is_valid():
-    #         interest = form.save(commit=False)
-    #         p = Product()
-    #         if form.interest == 'True':
-    #             p.incrementInterested(prod_id)
-    #             interest.save()
-    #             msg = 'Interest saved successfully'
-    #         else:
-    #             msg = 'Error'
-    #             return request,'myapp/order_response.html',{'msg':msg}
-    # else:
     form = InterestForm()
     return render(request,'myapp/productdetails.html', {'product': product, 'form':form, 'msg':msg})
 
@@ -200,7 +137,7 @@ def myorders(request):
 
 def register(request):
     if request.method== 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -210,7 +147,7 @@ def register(request):
             return HttpResponseRedirect(reverse(('myapp:index')))
         else:
             return HttpResponse('Invalid')
-    form = UserCreationForm()
+    form = SignUpForm()
     return render(request,'myapp/register.html',{'form':form})
 
 

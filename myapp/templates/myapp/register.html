@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 <body>
 {% extends 'myapp/base.html' %}
+{% load crispy_forms_tags %}
+
 {% block body_block %}
   <h2>Sign up</h2>
   <form action="/register/" method="post">
     {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Register</button>
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Register</button>
   </form>
 {% endblock %}
 </body>
