@@ -20,7 +20,6 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 class SignUpForm(UserCreationForm):
-
     class Meta:
         model = Client
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2','company', 'shipping_address', 'city', 'province', 'interested_in', 'image' )
